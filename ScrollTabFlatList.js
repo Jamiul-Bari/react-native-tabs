@@ -1,5 +1,4 @@
 import { Entypo, Feather } from '@expo/vector-icons';
-import { MotiView } from 'moti'
 import { faker } from '@faker-js/faker';
 import React, { useEffect, useRef, useState } from 'react';
 import { Dimensions, FlatList, Text, TouchableOpacity, View } from 'react-native';
@@ -47,7 +46,7 @@ export default function ScrollTabFlatList() {
                 renderItem={({ item, index: fIndex }) => {
                     return (
                         <TouchableOpacity onPress={() => { setIndex(fIndex) }}>
-                            <MotiView
+                            <View
                                 animate={{
                                     backgroundColor: fIndex === index ? _colors.active : _colors.inactive,
                                     opacity: fIndex === index ? 1 : 0.6,
@@ -66,7 +65,7 @@ export default function ScrollTabFlatList() {
                                 <Text style={{ color: '#36303F', fontWeight: '700' }}>
                                     {item.job}
                                 </Text>
-                            </MotiView>
+                            </View>
                         </TouchableOpacity>
                     );
                 }}
